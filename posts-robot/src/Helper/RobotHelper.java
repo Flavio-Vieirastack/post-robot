@@ -212,6 +212,12 @@ public abstract class RobotHelper {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
+    public static void backSpace(Robot robot) {
+        robot.keyPress(KeyEvent.VK_BACK_SPACE);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+    }
+
     public static void mouseLeftPress(Robot robot) {
         robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
         robot.delay(100); // segura um pouco para garantir o clique

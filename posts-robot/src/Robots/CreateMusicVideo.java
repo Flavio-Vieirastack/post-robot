@@ -17,23 +17,24 @@ public class CreateMusicVideo {
     }
 
     public void execute() {
-        int loops = 0;
-        while (loops < 5) {
-            openChrome();
-            openSuno();
-            openSunoCreate();
-            createSong();
-            downloadSong();
-            openVideoEditor();
-            editVideo();
-            copyMusicName();
-            openYoutube();
-            createYoutubeVideo();
-            deleteMusicFiles();
-            recreateMusicVideo();
-            loops++;
-        }
-        clearAll();
+        addThumbnail();
+//        int loops = 0;
+//        while (loops < 5) {
+//            openChrome();
+//            openSuno();
+//            openSunoCreate();
+//            createSong();
+//            downloadSong();
+//            openVideoEditor();
+//            editVideo();
+//            copyMusicName();
+//            openYoutube();
+//            createYoutubeVideo();
+//            deleteMusicFiles();
+//            recreateMusicVideo();
+//            loops++;
+//        }
+//        clearAll();
     }
 
     private void clickOnWindowsSearchResult() {
@@ -97,7 +98,7 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.mouseMove(2157,764);
+        robot.mouseMove(2157, 764);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(300L); //5 minutos
@@ -205,13 +206,13 @@ public class CreateMusicVideo {
         /// drag init Posicion X: 1264 Posocion Y: 409 end Posicion X: 144 Posocion Y: 872
         RobotHelper.drag(robot, 1264, 409, 144, 872);
         oneSecondDelay();
-        robot.mouseMove(185,283);
+        robot.mouseMove(185, 283);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
         RobotHelper.ctrlV(robot);
         oneSecondDelay();
-        robot.mouseMove(380,481);
+        robot.mouseMove(380, 481);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         // na parte a cima o video está pronto
@@ -226,11 +227,11 @@ public class CreateMusicVideo {
         robot.delay(50);
         robot.keyRelease(KeyEvent.VK_ENTER);
         delay(40L);
-        robot.mouseMove(2526,15);
+        robot.mouseMove(2526, 15);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.mouseMove(1275,544);
+        robot.mouseMove(1275, 544);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(2L);
@@ -238,68 +239,92 @@ public class CreateMusicVideo {
 
     private void copyMusicName() {
         //Faz a copia do nome aqui
-       robot.mouseMove(2272, 351);
-       oneSecondDelay();
-       RobotHelper.mouseRightPress(robot);
-       oneSecondDelay();
-       robot.mouseMove(2211, 581);
-       oneSecondDelay();
-       RobotHelper.mouseRightPress(robot);
-       delay(2L);
-       robot.mouseMove(1344, 422);
-       oneSecondDelay();
-       RobotHelper.mouseRightPress(robot);
-       oneSecondDelay();
-       RobotHelper.ctrlA(robot);
-       oneSecondDelay();
-       RobotHelper.ctrlC(robot);
+        robot.mouseMove(2272, 351);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        robot.mouseMove(2211, 581);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        delay(2L);
+        robot.mouseMove(1344, 422);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        RobotHelper.ctrlA(robot);
+        oneSecondDelay();
+        RobotHelper.ctrlC(robot);
     }
 
     private void openYoutube() {
         openChrome();
         delay(3L);
-        robot.mouseMove(405,99);
+        robot.mouseMove(405, 99);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(5L);
-        robot.mouseMove(2502,148);
+        robot.mouseMove(2502, 148);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(3L);
-        robot.mouseMove(2344,337);
+        robot.mouseMove(2344, 337);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(3L);
-        robot.mouseMove(2331,438);
+        robot.mouseMove(2331, 438);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(3L);
     }
 
-    private void createYoutubeVideo() {
-        robot.mouseMove(2374,148);
+    private void addThumbnail() {
+        robot.mouseMove(924, 811);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(2L);
-        robot.mouseMove(2420,190);
+        robot.mouseMove(761, 56);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        RobotHelper.backSpace(robot);
+        oneSecondDelay();
+        RobotHelper.typeText(robot, "C:\\Users\\flavi\\Pictures\\neomthumb");
+        delay(2L);
+        RobotHelper.enter(robot);
+        oneSecondDelay();
+        robot.mouseMove(822, 288);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        robot.mouseMove(226, 203);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        RobotHelper.enter(robot);
+    }
+
+    private void createYoutubeVideo() {
+        robot.mouseMove(2374, 148);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        delay(2L);
+        robot.mouseMove(2420, 190);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(4L);
-        robot.mouseMove(1271,695);
+        robot.mouseMove(1271, 695);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(2L);
-        robot.mouseMove(98,330);
+        robot.mouseMove(98, 330);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.mouseMove(377,57);
+        robot.mouseMove(377, 57);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.keyPress(KeyEvent.VK_BACK_SPACE);
-        robot.delay(100);
-        robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+        RobotHelper.backSpace(robot);
         oneSecondDelay();
         RobotHelper.typeText(robot, "C:\\Users\\flavi\\Documents\\NeonBeats\\videos");
         oneSecondDelay();
@@ -311,17 +336,19 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.ctrlA(robot);
         oneSecondDelay();
-        robot.mouseMove(1033,505);
+        robot.mouseMove(1033, 505);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(5L);
-        robot.mouseMove(911,405);
+        robot.mouseMove(911, 405);
         oneSecondDelay();
         RobotHelper.doubleClick(robot);
         oneSecondDelay();
         RobotHelper.ctrlV(robot);
         oneSecondDelay();
-        robot.mouseMove(1250,467);
+        robot.mouseMove(1250, 467);
+        oneSecondDelay();
+        addThumbnail();
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         for (int i = 0; i < 8; i++) {
@@ -332,7 +359,7 @@ public class CreateMusicVideo {
                 throw new RuntimeException(e);
             }
         }
-        robot.mouseMove(857,713);
+        robot.mouseMove(857, 713);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         clickNextInVideo();
@@ -343,7 +370,7 @@ public class CreateMusicVideo {
 
     private void clickNextInVideo() {
         oneSecondDelay();
-        robot.mouseMove(1675,940);
+        robot.mouseMove(1675, 940);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
     }
@@ -373,7 +400,7 @@ public class CreateMusicVideo {
         delay(3L);
         RobotHelper.customShortcut(robot, KeyEvent.VK_CONTROL, KeyEvent.VK_J);
         oneSecondDelay();
-        robot.mouseMove(1540 ,269);
+        robot.mouseMove(1540, 269);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
@@ -385,11 +412,11 @@ public class CreateMusicVideo {
         openSuno();
         openSunoCreate();
         //Deleta a musica
-        robot.mouseMove(2267,350);
+        robot.mouseMove(2267, 350);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.mouseMove(2235,790);
+        robot.mouseMove(2235, 790);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
