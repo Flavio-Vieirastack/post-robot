@@ -5,6 +5,7 @@ import Helper.RobotHelper;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Random;
 
@@ -25,7 +26,6 @@ public class CreateMusicVideo {
             downloadSong();
             openVideoEditor();
             editVideo();
-            openNeonBeatsFolder();
             copyMusicName();
             openYoutube();
             createYoutubeVideo();
@@ -33,6 +33,7 @@ public class CreateMusicVideo {
             recreateMusicVideo();
             loops++;
         }
+        clearAll();
     }
 
     private void clickOnWindowsSearchResult() {
@@ -46,6 +47,14 @@ public class CreateMusicVideo {
         RobotHelper.typeText(robot, "chrome");
         oneSecondDelay();
         clickOnWindowsSearchResult();
+        oneSecondDelay();
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_SPACE);
+        robot.keyPress(KeyEvent.VK_X);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_ALT);
+        robot.keyRelease(KeyEvent.VK_SPACE);
+        robot.keyRelease(KeyEvent.VK_X);
         delay(2L);
     }
 
@@ -81,14 +90,25 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.typeText(robot, PromptsHelper.getRandomPrompt());
         delay(2L);
+        robot.mouseMove(443, 986);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
         robot.mouseMove(487, 880);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
-        delay(420L); //Sete minutos
+        oneSecondDelay();
+        robot.mouseMove(2157,764);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        delay(300L); //5 minutos
     }
 
     private void downloadSong() {
         // faz o download da musica e salva na pasta
+        delay(2L);
+        robot.mouseMove(809, 339);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
         delay(2L);
         robot.mouseMove(2270, 344);
         oneSecondDelay();
@@ -143,7 +163,7 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         delay(2L);
-        robot.mouseMove(558, 195);
+        robot.mouseMove(228, 235);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
@@ -153,6 +173,9 @@ public class CreateMusicVideo {
         delay(3L);
         RobotHelper.drag(robot, 1383, 393, 613, 918);
         delay(2L);
+        RobotHelper.customShortcut(robot, KeyEvent.VK_CONTROL, KeyEvent.VK_2);
+        oneSecondDelay();
+        RobotHelper.customShortcut(robot, KeyEvent.VK_CONTROL, KeyEvent.VK_2);
         robot.mouseMove(120, 288);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
@@ -202,7 +225,7 @@ public class CreateMusicVideo {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.delay(50);
         robot.keyRelease(KeyEvent.VK_ENTER);
-        delay(60L);
+        delay(40L);
         robot.mouseMove(2526,15);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
@@ -213,34 +236,23 @@ public class CreateMusicVideo {
         delay(2L);
     }
 
-    private void openNeonBeatsFolder() {
-        // abre a pasta do neon beats
-        RobotHelper.initialWindowsMenu(robot);
-        oneSecondDelay();
-        RobotHelper.typeText(robot, "neonbeats");
-        oneSecondDelay();
-        robot.mouseMove(1326, 744);
-        oneSecondDelay();
-        RobotHelper.mouseRightPress(robot);
-        delay(2L);
-    }
-
     private void copyMusicName() {
         //Faz a copia do nome aqui
-        robot.mouseMove(1228,447);
-        oneSecondDelay();
-        RobotHelper.mouseRightPress(robot);
-        oneSecondDelay();
-        robot.keyPress(KeyEvent.VK_F2);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_F2);
-        oneSecondDelay();
-        RobotHelper.ctrlC(robot);
-        oneSecondDelay();
-        robot.mouseMove(1736, 270);
-        oneSecondDelay();
-        RobotHelper.mouseRightPress(robot);
-        oneSecondDelay();
+       robot.mouseMove(2272, 351);
+       oneSecondDelay();
+       RobotHelper.mouseRightPress(robot);
+       oneSecondDelay();
+       robot.mouseMove(2211, 581);
+       oneSecondDelay();
+       RobotHelper.mouseRightPress(robot);
+       delay(2L);
+       robot.mouseMove(1344, 422);
+       oneSecondDelay();
+       RobotHelper.mouseRightPress(robot);
+       oneSecondDelay();
+       RobotHelper.ctrlA(robot);
+       oneSecondDelay();
+       RobotHelper.ctrlC(robot);
     }
 
     private void openYoutube() {
@@ -281,17 +293,23 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.mouseMove(235,190);
-        oneSecondDelay();
-        RobotHelper.doubleClick(robot);
-        oneSecondDelay();
-        robot.mouseMove(217,187);
-        oneSecondDelay();
-        RobotHelper.doubleClick(robot);
-        oneSecondDelay();
-        robot.mouseMove(236,164);
+        robot.mouseMove(377,57);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        robot.keyPress(KeyEvent.VK_BACK_SPACE);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+        oneSecondDelay();
+        RobotHelper.typeText(robot, "C:\\Users\\flavi\\Documents\\NeonBeats\\videos");
+        oneSecondDelay();
+        RobotHelper.enter(robot);
+        oneSecondDelay();
+        robot.mouseMove(673, 258);
+        oneSecondDelay();
+        RobotHelper.mouseRightPress(robot);
+        oneSecondDelay();
+        RobotHelper.ctrlA(robot);
         oneSecondDelay();
         robot.mouseMove(1033,505);
         oneSecondDelay();
@@ -331,38 +349,41 @@ public class CreateMusicVideo {
     }
 
     private void deleteMusicFiles() {
-        openNeonBeatsFolder();
-        delay(2L);
-        robot.mouseMove(1226,460);
+        oneSecondDelay();
+        RobotHelper.initialWindowsMenu(robot);
+        oneSecondDelay();
+        RobotHelper.typeText(robot, "C:\\Users\\flavi\\Videos");
+        oneSecondDelay();
+        RobotHelper.enter(robot);
+        oneSecondDelay();
+        RobotHelper.ctrlA(robot);
+        RobotHelper.delete(robot);
+        oneSecondDelay();
+        RobotHelper.initialWindowsMenu(robot);
+        oneSecondDelay();
+        RobotHelper.typeText(robot, "C:\\Users\\flavi\\Documents\\NeonBeats\\videos");
+        oneSecondDelay();
+        RobotHelper.enter(robot);
+        oneSecondDelay();
+        RobotHelper.ctrlA(robot);
+        oneSecondDelay();
+        RobotHelper.delete(robot);
+        oneSecondDelay();
+        openChrome();
+        delay(3L);
+        RobotHelper.customShortcut(robot, KeyEvent.VK_CONTROL, KeyEvent.VK_J);
+        oneSecondDelay();
+        robot.mouseMove(1540 ,269);
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-        robot.keyPress(KeyEvent.VK_DELETE);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_DELETE);
-        oneSecondDelay();
-        robot.mouseMove(867,448);
-        oneSecondDelay();
-        RobotHelper.doubleClick(robot);
-        oneSecondDelay();
-        robot.mouseMove(873,421);
-        oneSecondDelay();
-        RobotHelper.mouseRightPress(robot);
-        oneSecondDelay();
-        robot.keyPress(KeyEvent.VK_DELETE);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_DELETE);
-        oneSecondDelay();
-        robot.mouseMove(1754,272);
-        oneSecondDelay();
-        RobotHelper.mouseRightPress(robot);
+        RobotHelper.delete(robot);
     }
 
     private void recreateMusicVideo() {
         openChrome();
         openSuno();
         openSunoCreate();
-
         //Deleta a musica
         robot.mouseMove(2267,350);
         oneSecondDelay();
@@ -372,15 +393,24 @@ public class CreateMusicVideo {
         oneSecondDelay();
         RobotHelper.mouseRightPress(robot);
         oneSecondDelay();
-
         downloadSong();
         openVideoEditor();
         editVideo();
-        openNeonBeatsFolder();
         copyMusicName();
         openYoutube();
         createYoutubeVideo();
         deleteMusicFiles();
+    }
+
+    private void clearAll() {
+        try {
+            String command = "powershell.exe -NoProfile -Command Clear-RecycleBin -Force";
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor();
+            System.out.println("Lixeira esvaziada com sucesso!");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void oneSecondDelay() {
