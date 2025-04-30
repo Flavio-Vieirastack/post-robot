@@ -206,7 +206,7 @@ public abstract class RobotHelper {
         if (shift) robot.keyRelease(KeyEvent.VK_SHIFT);
     }
 
-    public static void mouseRightPress(Robot robot) {
+    public static void mouseLeftPress(Robot robot) {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(100); // segura um pouco para garantir o clique
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -218,11 +218,11 @@ public abstract class RobotHelper {
         robot.keyRelease(KeyEvent.VK_BACK_SPACE);
     }
 
-    public static void mouseLeftPress(Robot robot) {
-        robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
-        robot.delay(100); // segura um pouco para garantir o clique
-        robot.mouseRelease(InputEvent.BUTTON2_DOWN_MASK);
-    }
+//    public static void mouseRightPress(Robot robot) {
+//        robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
+//        robot.delay(100); // segura um pouco para garantir o clique
+//        robot.mouseRelease(InputEvent.BUTTON2_DOWN_MASK);
+//    }
 
     public static void drag(Robot robot, int startX, int startY, int endX, int endY) {
         robot.mouseMove(startX, startY);
